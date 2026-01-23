@@ -20,9 +20,9 @@ void lcd_setup(void){
 	
 	_delay_ms(40); //requerimiento para incialización de LCD
 	
-	lcd_command(0x38) //MODO 8 BITS, 2 LINEAS
-	lcd_command(0x0C) //Display ON
-	lcd_command(0x06) //Auto incrementar cursor
+	lcd_command(0x38); //MODO 8 BITS, 2 LINEAS
+	lcd_command(0x0C); //Display ON
+	lcd_command(0x06); //Auto incrementar cursor
 	lcd_clear();
 }
 
@@ -59,7 +59,7 @@ void lcd_write(uint8_t data){
 }
 
 void lcd_clear(void){ //Limpiar el LCD de datos
-	lcd_command(0x01) //Comando para limpiar el Display y reset de cursor
+	lcd_command(0x01); //Comando para limpiar el Display y reset de cursor
 	_delay_ms(3); //Tiempo muerto
 }
 
