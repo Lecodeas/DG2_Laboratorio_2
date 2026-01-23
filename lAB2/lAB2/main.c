@@ -15,14 +15,29 @@
 #include <avr/io.h> // IO regs
 #include <util/delay.h> //Delays
 #include <stdint.h> //Lib para enteros
-#include <avr/interrupt.h> //Lib para interrupciones
 
+//LIBRERÍAS PROPIAS
+
+//VARIABLES valor adc, conversion a voltaje
+//Posiblemente usar un array de chars para los caracteres de LCD (16 bit + null)
 
 int main(void)
 {
-    /* Replace with your application code */
+    //SETUP LCD y ADC
+	//SETUP UART
     while (1) 
     {
+		//leer adc en P1
+		//convertir a voltaje
+		//leer adc en P2
+		//convertir a voltaje
+		//Limpiar pantalla
+		//Reset Cursor
+		//Headers
+		//Cursor Linea 2
+		//Escribir Valores (investigar formatos) en el array
+		//Desplegar el string formado
+		//Esperar un tiempo para otra lectura
     }
 }
 
