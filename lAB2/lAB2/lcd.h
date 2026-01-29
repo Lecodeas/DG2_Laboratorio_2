@@ -14,7 +14,7 @@
 #define LCD_H_
 
 //HEADER FILES
-#define F_CPU 160000000 //F cpu en 16 Mhz
+#define F_CPU 16000000UL //F cpu en 16 Mhz
 #include <avr/io.h> // IO regs
 #include <util/delay.h> //Delays
 #include <stdint.h> //Lib para enteros

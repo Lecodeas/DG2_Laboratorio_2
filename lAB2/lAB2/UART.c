@@ -12,19 +12,21 @@
 
 #include "UART.h"
 
-#define F_CPU 160000000 //F cpu en 16 Mhz
+#define F_CPU 16000000UL //F cpu en 16 Mhz
 
 void UART_setup(uint32_t baudrate){
-	uint16_t ubrr = (F_CPU / 16UL / baudrate)-1; //Cálculo automatizado
-	UBRR0H = ubrr>>8;     //High Nibble
-	UBRR0L = ubrr;        //Low Nibble
-	
-	// Enable de RX y TX
-	UCSR0B = (1 << RXEN0) | (1 << TXEN0);
-
-	// 8 data bits, sin pariedad, 1 stopbit
-	UCSR0C = (1 << UCSZ01) | (1 << UCSZ00);
-}
+ 	uint16_t ubrr = (F_CPU / 16UL / baudrate)-1; //Cálculo automatizado
+ 	UBRR0H = ubrr>>8;     //High Nibble
+ 	UBRR0L = ubrr;        //Low Nibble
+ 	
+ 	UCSR0A = 0;
+ 	
+ 	// Enable de RX y TX
+ 	UCSR0B = (1 << RXEN0) | (1 << TXEN0);
+ 
+ 	// 8 data bits, sin pariedad, 1 stopbit
+ 	UCSR0C = (1 << UCSZ01) | (1 << UCSZ00);
+ }
 
 void UART_writeChar(char c)
 {
